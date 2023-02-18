@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Fan blades",
     "author": "Gabriel Shaar",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (3, 4, 0),
     "location": "View3D > Add > Mesh > Fan blades",
     "description": "Add fan blades",
@@ -33,12 +33,12 @@ class FanBladeGenerator(bpy.types.Operator):
     bl_label = "Fan blades"
     bl_options = {'REGISTER', 'UNDO'}
 
-    count: bpy.props.IntProperty(name="Blades", default=5, min=2, max=50)
+    count: bpy.props.IntProperty(name="Blades", default=5, min=2, max=13)
     deform: bpy.props.FloatProperty(name="Deform angle", default=35, min=2, max=100)
     thickness: bpy.props.FloatProperty(name="Thickness", default=0.15, min=0.001, max=1)
-    form_smooth: bpy.props.IntProperty(name="Form smooth", default=4, min=1, max=10)
-    edge_smooth_enabled: bpy.props.BoolProperty(name="Edge smooth", default=True)
-    edge_smooth: bpy.props.IntProperty(name="Edge smooth", default=2, min=1, max=10)
+    form_smooth: bpy.props.IntProperty(name="Form subdivide", default=2, min=1, max=4)
+    edge_smooth_enabled: bpy.props.BoolProperty(name="Edge subdivide", default=True)
+    edge_smooth: bpy.props.IntProperty(name="Edge smooth", default=2, min=1, max=4)
 
     def execute(self, context):
         bpy.ops.object.select_all(action='DESELECT')
