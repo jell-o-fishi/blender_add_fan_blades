@@ -38,7 +38,7 @@ class FanBladeGenerator(bpy.types.Operator):
     thickness: bpy.props.FloatProperty(name="Thickness", default=0.15, min=0.001, max=1)
     form_smooth: bpy.props.IntProperty(name="Form subdivide", default=2, min=1, max=4)
     edge_smooth_enabled: bpy.props.BoolProperty(name="Edge subdivide", default=True)
-    edge_smooth: bpy.props.IntProperty(name="Edge smooth", default=2, min=1, max=4)
+    edge_smooth: bpy.props.IntProperty(name="Edge subdivide", default=2, min=1, max=4)
 
     def execute(self, context):
         bpy.ops.object.select_all(action='DESELECT')
